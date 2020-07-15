@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="./papaparse.min.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyBBU76rtGw8mnp665UpfDUqO6wJyWWjXUY'
+      });
+      google.charts.setOnLoadCallback(drawMap);
+
+      function drawMap() {
+        const data = new google.visualization.DataTable();
+
+        // Declare columns
+        data.addColumn('string', 'State Name');
+        data.addColumn('number', 'Color Code');
+        data.addColumn({type:'string', role:'tooltip'});
+
+        // police_reform_tracker_data_hack_1.csv
+        const csvString = `state,color_code,color_code_alias,source_link,current_as_of
+        Alabama,0,No Action Taken Yet,None Found,6/17/20
+        Alaska,1,Commitment To Act,http://www.newsminer.com/news/local_news/two-fairbanks-democrats-point-to-systemic-issues-leading-to-over-policing/article_a26c4950-ab97-11ea-bc2c-73b7ad778e30.html,6/11/20
+        Arizona,2,Bill Passed Or In Process,https://cronkitenews.azpbs.org/2020/06/25/arizona-lawmakers-split-on-party-lines-as-house-passes-police-reform-bill/,6/3/20
+        Arkansas,2,Bill Passed Or In Process,https://www.wmcactionnews5.com/2020/06/09/live-arkansas-governor-discusses-police-reform-task-force/,6/25/20
+        California,2,Bill Passed Or In Process,https://www.mercurynews.com/2020/07/01/new-california-law-would-strip-convicted-officers-of-their-badges/,6/5/20
+        Colorado,2,Bill Passed Or In Process,https://thehill.com/homenews/state-watch/502680-colorado-legislature-sends-major-police-reform-bill-to-governors-desk,7/1/20
+        Connecticut,2,Bill Passed Or In Process,https://www.courant.com/news/connecticut/hc-news-lamont-police-executive-order-20200615-q43cff7bdbd5pabktlqf4eqygu-story.html,6/12/20
+        Delaware,1,Commitment To Act,https://www.delawareonline.com/story/news/politics/2020/06/10/delaware-lawmakers-attorney-general-propose-major-police-reforms/5329440002/,6/15/20
+        Florida,1,Commitment To Act,https://www.thecentersquare.com/florida/florida-special-session-for-police-reform-nixed-but-issue-won-t-die/article_57cd61d2-ab37-11ea-bb00-13dac31e632f.html,6/10/20
+        Georgia,2,Bill Passed Or In Process,https://www.11alive.com/article/news/politics/georgia-police-reform/85-30f68dff-bc3c-4c15-8278-7305ef97caf1,6/16/20
+        Hawaii,2,Bill Passed Or In Process,https://www.capitol.hawaii.gov/measure_indiv.aspx?billtype=HB&billnumber=285&year=2020,6/10/20
+        Idaho,0,No Action Taken Yet,None Found,6/15/20
+        Illinois,1,Commitment To Act, https://fortune.com/2020/06/04/police-reform-racism-state-local-bills-legislation-new-york-louisville-colorado-massachusetts-illinois/,6/4/20
+        Indiana,1,Commitment To Act,https://fox59.com/news/indiana-black-legislative-caucus-pushes-for-policy-changes-criminal-justice-reforms/,6/13/20
+        Iowa,2,Bill Passed Or In Process,https://www.legis.iowa.gov/docs/publications/LGI/88/HF2647.pdf,6/12/20
+        Kansas,1,Commitment To Act,https://www.ksn.com/news/capitol-bureau/commission-prepares-to-take-on-police-reform-racial-justice-in-kansas/,5/21/20
+        Kentucky,0,No Action Taken Yet,None Found,6/15/20
+        Louisiana,2,Bill Passed Or In Process,http://www.legis.la.gov/legis/BillInfo.aspx?i=239225,6/9/20
+        Maine,1,Commitment To Act,https://www.penbaypilot.com/article/three-midcoast-legislators-commit-law-enforcement-system-reform-maine/135006,6/11/20
+        Maryland,1,Commitment To Act,https://www.baltimoresun.com/politics/bs-md-pol-police-reform-20200604-y6dsjc2odjhkjd3bb4tvhgpmcq-story.html,6/4/20
+        Massachusetts,2,Bill Passed Or In Process,https://malegislature.gov/Legislators/Profile/REH1,6/4/20
+        Michigan,2,Bill Passed Or In Process,https://senatedems.com/irwin/news/2020/05/28/irwin-bill-to-increase-police-officer-training-decrease-excessive-force/,6/4/20
+        Minnesota,2,Bill Passed Or In Process,http://www.house.leg.state.mn.us/bills/Info/SF0104,6/19/20
+        Mississippi,0,No Action Taken Yet,https://legiscan.com/MS/bill/HB851/2020,6/20/20
+        Missouri,0,No Action Taken Yet,https://www.krmsradio.com/mo-senator-blunt-calls-for-passage-of-justice-act-police-reform/,6/20/20
+        Montana,0,No Action Taken Yet,https://www.kulr8.com/news/sen-daines-signs-on-to-police-reform-legislation-in-senate/article_edacb384-b1d5-11ea-87f8-13ca2caaaa10.html,6/18/20
+        Nebraska,0,No Action Taken Yet,https://nebraska.tv/news/local/neb-senators-co-sponsor-gop-police-reform-bill,6/18/20
+        Nevada,0,No Action Taken Yet,https://www.nevadacurrent.com/2020/06/18/cortez-masto-pans-watered-down-republican-police-reform-bill/,6/18/20
+        New Hampshire,2,Bill Passed Or In Process,https://legiscan.com/NH/text/SB470/id/2082402,6/16/20
+        New Jersey,2,Bill Passed Or In Process,https://www.njleg.state.nj.us/bills/BillView.asp?BillNumber=A4272,6/19/20
+        New Mexico,0,No Action Taken Yet,https://nmpoliticalreport.com/2020/06/17/guv-legislators-can-discuss-police-reform-election-changes-during-special-session/,6/17/20
+        New York,2,Bill Passed Or In Process,https://www.cnn.com/2020/06/10/us/new-york-passes-police-reform-bills/index.html,6/10/20
+        North Carolina,0,No Action Taken Yet,https://abc11.com/george-floyd-rpd-raleigh-police-chokehold-use-of-force/6239951/,6/10/20
+        North Dakota,0,No Action Taken Yet,None Found,7/3/20
+        Ohio,2,Bill Passed Or In Process,https://local12.com/news/local/ohio-republicans-introduce-police-reform-bill-cincinnati,6/12/20
+        Oklahoma,2,Bill Passed Or In Process,http://www.oklegislature.gov/BillInfo.aspx?Bill=HB2946&Session=2000&Tab=0,6/10/20
+        Oregon,0,No Action Taken Yet,https://legiscan.com/gaits/search?state=OR&keyword=%22Police%22,6/12/20
+        Pennsylvania,2,Bill Passed Or In Process,https://papost.org/2020/06/15/its-a-new-day-pa-lawmakers-to-tackle-police-reform-in-wake-of-george-floyds-death/,6/15/20
+        Rhode Island,0,No Action Taken Yet,https://patch.com/rhode-island/cranston/prov-senator-calls-reform-police-officers-bill-rights,6/8/20
+        South Carolina,0,No Action Taken Yet,None Found,7/3/20
+        South Dakota,0,No Action Taken Yet,https://www.graydc.com/content/news/South-Dakota-lawmakers-discuss-police-reform-legislation--571496101.html,6/26/20
+        Tennessee,2,Bill Passed Or In Process,https://www.tennessean.com/story/news/crime/2020/07/02/police-reform-tennessee-bill-lee-announces-early-stage-efforts/5367739002/,7/2/20
+        Texas,1,Commitment To Act,https://www.texastribune.org/2020/06/18/texas-police-george-floyd/,6/16/20
+        Utah,1,Commitment To Act,https://www.stgeorgeutah.com/news/archive/2020/06/06/apr-utah-gop-lawmaker-comes-out-in-support-of-police-reform#.XupDfZNKglI,6/6/20
+        Vermont,2,Bill Passed Or In Process,https://vtdigger.org/2020/06/18/senate-passes-first-police-reform-measure-tacked-onto-budget-amendment/,6/18/20
+        Virginia,1,Commitment To Act,https://www.nbcwashington.com/news/local/racism-police-reform-focus-of-virginia-legislative-session/2333263/,6/17/20
+        Washington,1,Commitment To Act,http://www.yelmonline.com/news/article_0c8f34ca-aa65-11ea-bcbb-c79bd4488c05.html,6/9/20
+        West Virginia,0,No Action Taken Yet,None Found,6/17/20
+        Wisconsin,0,No Action Taken Yet,https://urbanmilwaukee.com/2020/06/14/wisconsin-police-union-supports-reforms/,6/17/20
+        Wyoming,0,No Action Taken Yet,None Found,6/17/20`;
+        Papa.parse(csvString, {
+            header: true,
+            dynamicTyping: true,
+            delimiter:",",
+            complete: function(results) {
+                csvInfo = results;
+                console.log(results);
+
+                // Add data
+                const info = csvInfo.data.map(obj => [obj.state, obj.color_code, obj.color_code_alias+" "+obj.current_as_of])
+                console.log(info);
+                data.addRows(info);
+
+                // Draw chart
+                const options = {
+                    region: 'US',
+                    displayMode: 'regions',
+                    resolution: 'provinces',
+                };
+                const chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+                chart.draw(data, options);
+            }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
