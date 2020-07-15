@@ -15,7 +15,7 @@
         // Declare columns
         data.addColumn('string', 'State Name');
         data.addColumn('number', 'Color Code');
-        data.addColumn({type:'string', role:'tooltip'});
+        data.addColumn({type:'string', role:'tooltip', p: {html: true}})
 
         // police_reform_tracker_data_hack_1.csv
         const csvString = `state,color_code,color_code_alias,source_link,current_as_of
@@ -75,11 +75,13 @@
             delimiter:",",
             complete: function(results) {
                 csvInfo = results;
-                console.log(results);
 
                 // Add data
-                const info = csvInfo.data.map(obj => [obj.state, obj.color_code, obj.color_code_alias+" "+obj.current_as_of])
-                console.log(info);
+                const info = csvInfo.data.map(obj => [
+                    obj.state, 
+                    obj.color_code, 
+                    createTooltipContent(obj.color_code_alias, obj.source_link, obj.current_as_of),
+                ]);
                 data.addRows(info);
 
                 // Draw chart
@@ -87,11 +89,20 @@
                     region: 'US',
                     displayMode: 'regions',
                     resolution: 'provinces',
+                    tooltip: {isHtml: true},
                 };
                 const chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
                 chart.draw(data, options);
             }
         });
+      }
+
+      function createTooltipContent(status, link, date) {
+        return '<div>'
+            +'<p>' +status +'</p>'
+            +'<p>' +date +'</p>'
+            +'<p>' +link +'</p>'
+        + '</div>';
       }
     </script>
   </head>
