@@ -1,13 +1,13 @@
 import React from 'react';
 import './navbar.css';
-import {AppBar, Toolbar, Typography, IconButton, Button} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import {AppBar, Toolbar, Button} from '@material-ui/core';
+// import MenuIcon from '@material-ui/icons/Menu';
 
 
 export default class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     render() {
         return <AppBar
         position="static"
