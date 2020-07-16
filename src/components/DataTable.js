@@ -20,11 +20,9 @@ export default class DataTable extends React.Component {
     });
     const body = data.map((row) => {
       const cells = data.columns.map((d, i) => {
-        if (i === 0) {
-          return (<TableCell>{row[d]}</TableCell>)
-        } else {
-          return (<TableCell align="right">{row[d]}</TableCell>)
-        }
+        const align = i === 0 ? "left" : "right";
+        const contents = d === 'source_link' ? row[d] : `<a href="${row[d]}">${row[d]}</a>`;
+        return (<TableCell align={align}>{contents}</TableCell>)
       })
       return (
         <TableRow key={row.name}>{cells}</TableRow>
