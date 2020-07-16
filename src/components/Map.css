@@ -1,0 +1,20 @@
+.map-container {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.map-legend {
+  width: 20vw;
+  text-align: left;
+}
+
+.map-legend div {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.map-legend li {
+  list-style: none;
+}

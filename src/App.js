@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar.js';
-import Map from './Map';
+import Map from './components/Map';
 import DataTable from './components/DataTable.js';
 import csvData from './police_reform_tracker_data_hack_1.csv';
 import * as d3 from 'd3';
