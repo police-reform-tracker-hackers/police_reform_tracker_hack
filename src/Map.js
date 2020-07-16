@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart } from 'react-google-charts';
 import * as d3 from 'd3';
 import csvData from './police_reform_tracker_data_hack_1.csv';
+import { select } from 'd3';
 
 const options = {
     region: 'US',
@@ -20,6 +21,7 @@ const createTooltipContent = (status, link, date) => {
 
 const Map = () => {
     const [mapData, setMapData] = React.useState([]);
+    const [csvInfo, setCSVInfo] = React.useState([]);
     React.useEffect(() => {
         d3.csv(csvData, function(csvData) { 
             const cols = [["x", "y", { role: "tooltip", type: "string", p: { html: true } }]];
@@ -29,6 +31,7 @@ const Map = () => {
                 createTooltipContent(obj.color_code_alias, obj.source_link, obj.current_as_of),
             ]);
             setMapData(cols.concat(rows));
+            setCSVInfo(csvData);
         });
     }, [])
     return (
@@ -40,6 +43,17 @@ const Map = () => {
                 width="900px"
                 height="500px"
                 legendToggle
+                chartEvents={[
+                    {
+                      eventName: "select",
+                      callback: ({ chartWrapper }) => {
+                        const selection = chartWrapper.getChart().getSelection();
+                        if (selection.length === 0) return;
+                        const articleURL = csvInfo[selection[0].row].source_link;
+                        window.open(articleURL, '_blank');
+                      }
+                    }
+                  ]}
             />
         </div>
     );  
