@@ -13,8 +13,8 @@ export default class NavBar extends React.Component {
         position="static"
         style={{ background: 'transparent', boxShadow: 'none'}}
         >
-            <Toolbar>{/*
-                <IconButton
+            <Toolbar>
+                {/*<IconButton
                     edge="start"
                     color="black"
                     aria-label="menu"
@@ -29,6 +29,9 @@ export default class NavBar extends React.Component {
                 </Button>
                 <Button href="#form">
                     Submit an update
+                </Button>
+                <Button>
+                    Take action
                 </Button>
                 <Button href="#about">
                     About us
