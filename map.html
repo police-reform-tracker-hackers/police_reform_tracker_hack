@@ -5,7 +5,7 @@
     <script type="text/javascript">
       google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': 'AIzaSyBBU76rtGw8mnp665UpfDUqO6wJyWWjXUY'
+        'mapsApiKey':${{ secrets.GCP_API_KEY }}
       });
       google.charts.setOnLoadCallback(drawMap);
 
