@@ -10,34 +10,32 @@ const options = {
     tooltip: {isHtml: true},
 };
 
-const dataColumns = [
-    {
-        type: "string",
-        label: "State",
-    },
-    {
-        type: "number",
-        label: "Color Code"
-    }, 
-];
+const createTooltipContent = (status, link, date) => {
+    return '<div>'
+        +'<p>' +status +'</p>'
+        +'<p>' +date +'</p>'
+        +'<p>' +link +'</p>'
+    + '</div>';
+};
 
 const Map = () => {
-    const [dataRows, setDataRows] = React.useState([]);
+    const [mapData, setMapData] = React.useState([]);
     React.useEffect(() => {
         d3.csv(csvData, function(csvData) { 
+            const cols = [["x", "y", { role: "tooltip", type: "string", p: { html: true } }]];
             const rows = csvData.map(obj => [
                 obj.state, 
-                Number(obj.color_code), 
+                Number(obj.color_code),
+                createTooltipContent(obj.color_code_alias, obj.source_link, obj.current_as_of),
             ]);
-            setDataRows(rows);
+            setMapData(cols.concat(rows));
         });
     }, [])
     return (
         <div style={{margin: "0 auto"}} className={"map-container"}>
             <Chart
                 chartType="GeoChart"
-                columns={dataColumns}
-                rows={dataRows}
+                data={mapData}
                 options={options}
                 width="900px"
                 height="500px"
