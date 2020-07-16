@@ -4,8 +4,8 @@
 }
 
 .map-legend {
-  width: 20vw;
   text-align: left;
+  margin-left: 70vw;
 }
 
 .map-legend div {
