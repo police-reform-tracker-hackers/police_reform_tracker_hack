@@ -6,7 +6,10 @@ export default function DataTableMUI(props) {
   const data = props.data;
   const columns = props.data.columns;
   const options = {
-    filterType: 'checkbox'
+    filterType: 'checkbox',
+    pagination: false,
+    fixedHeader: true,
+    responsive: "scroll"
   }
 
   return (
