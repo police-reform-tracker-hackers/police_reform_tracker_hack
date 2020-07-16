@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 import * as d3 from 'd3';
-import csvData from './police_reform_tracker_data_hack_1.csv';
+// import csvData from './police_reform_tracker_data_hack_1.csv';
 import { select } from 'd3';
 
 const options = {
@@ -23,10 +23,11 @@ const Map = () => {
     const [mapData, setMapData] = React.useState([]);
     const [csvInfo, setCSVInfo] = React.useState([]);
     React.useEffect(() => {
-        d3.csv(csvData, function(csvData) { 
+        d3.csv('./police_reform_tracker_data_hack_1.csv').then(function(csvData) {
+            console.log(csvData);
             const cols = [["x", "y", { role: "tooltip", type: "string", p: { html: true } }]];
             const rows = csvData.map(obj => [
-                obj.state, 
+                obj.state,
                 Number(obj.color_code),
                 createTooltipContent(obj.color_code_alias, obj.source_link, obj.current_as_of),
             ]);
@@ -57,7 +58,7 @@ const Map = () => {
                   ]}
             />
         </div>
-    );  
-} 
+    );
+}
 
 export default Map;
