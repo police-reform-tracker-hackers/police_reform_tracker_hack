@@ -50,7 +50,8 @@ const Map = () => {
                         const selection = chartWrapper.getChart().getSelection();
                         if (selection.length === 0) return;
                         const articleURL = csvInfo[selection[0].row].source_link;
-                        window.open(articleURL, '_blank');
+                        if (articleURL !== "None Found")
+                            window.open(articleURL, '_blank');
                       }
                     }
                   ]}
