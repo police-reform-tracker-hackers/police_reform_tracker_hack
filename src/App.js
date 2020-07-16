@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar.js';
 import Map from './Map';
+import SectionContainer from './sections/SectionContainer.js';
 // import DataTable from './components/DataTable.js';
 import DataTableMUI from './components/DataTableMUI.js';
 import csvData from './police_reform_tracker_data_hack_1.csv';
@@ -30,8 +31,15 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <NavBar/>
-        {this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
-        {this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
+        <SectionContainer
+          id="map"
+          component={this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
+        />
+        <hr/>
+        <SectionContainer
+          id="data"
+          component={this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
+        />
       </div>
     )
   }

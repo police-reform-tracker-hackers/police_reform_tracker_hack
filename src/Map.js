@@ -33,13 +33,11 @@ export default function Map(props) {
     }, [])
     return (
 
-        <div style={{margin: "0 auto"}} className={"map-container"}>
             <Chart
                 chartType="GeoChart"
                 data={mapData}
                 options={options}
-                width="900px"
-                height="500px"
+                height='700px'
                 legendToggle
                 chartEvents={[
                     {
@@ -54,6 +52,5 @@ export default function Map(props) {
                     }
                 ]}
             />
-        </div>
     );
 }

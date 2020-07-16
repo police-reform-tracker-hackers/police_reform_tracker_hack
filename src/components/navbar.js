@@ -10,8 +10,9 @@ export default class NavBar extends React.Component {
     // }
     render() {
         return <AppBar
-        position="static"
-        style={{ background: 'transparent', boxShadow: 'none'}}
+        position="sticky"
+        className="navbar"
+        style={{ background: 'rgba(0, 0, 0, 0.2)', boxShadow: 'none'}}
         >
             <Toolbar>
                 {/*<IconButton
