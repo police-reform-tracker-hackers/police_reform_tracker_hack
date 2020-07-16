@@ -1,5 +1,5 @@
 import React from 'react';
-import './navbar.css';
+import './NavBar.css';
 import {AppBar, Toolbar, Button} from '@material-ui/core';
 // import MenuIcon from '@material-ui/icons/Menu';
 

@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default class Table extends React.Component {
+export default class DataTable extends React.Component {
   const classes = useStyles();
   const data = this.props.data;
   const header = data.columns.map(((d, i) => {(
