@@ -23,10 +23,6 @@ export default function DataTableMUI(props) {
 
   return (
     <div>
-      <Typography
-        variant="h3"
-        className="centering spaced"
-      >Raw data</Typography>
       <MUIDataTable
         data={data}
         columns={columns}
