@@ -23,32 +23,34 @@ export default class NavBar extends React.Component {
                 largeMenuClassName="navbar-lg"
                 smallMenuClassName="navbar-sm"
                 menu={
-                    <ul>
-                        <NavItem
-                            sectionId="map"
-                            sectionName="Map"
-                        />
-                        <NavItem
-                            sectionId="data"
-                            sectionName="Data"
-                        />
-                        <NavItem
-                            sectionId="form"
-                            sectionName="Submit an update"
-                        />
-                        <NavItem
-                            sectionId="takeaction"
-                            sectionName="Take action"
-                        />
-                        <NavItem
-                            sectionId="mission"
-                            sectionName="Mission"
-                        />
-                        <NavItem
-                            sectionId="contact"
-                            sectionName="Contact"
-                        />
-                    </ul>
+                    <div className="navbar-sm-expanded">
+                        <ul>
+                            <NavItem
+                                sectionId="map"
+                                sectionName="Map"
+                            />
+                            <NavItem
+                                sectionId="data"
+                                sectionName="Data"
+                            />
+                            <NavItem
+                                sectionId="form"
+                                sectionName="Submit an update"
+                            />
+                            <NavItem
+                                sectionId="takeaction"
+                                sectionName="Take action"
+                            />
+                            <NavItem
+                                sectionId="mission"
+                                sectionName="Mission"
+                            />
+                            <NavItem
+                                sectionId="contact"
+                                sectionName="Contact"
+                            />
+                        </ul>
+                    </div>
                 }
             />
             </div>
