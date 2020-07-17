@@ -1,8 +1,9 @@
 import React from 'react';
 import './NavBar.css';
 import NavItem from './NavItem.js';
+import NavTitle from './NavTitle.js';
 import {Link, animateScroll as scroll} from 'react-scroll';
-import {AppBar, Toolbar, Button} from '@material-ui/core';
+import {AppBar, Toolbar, Button, Typography} from '@material-ui/core';
 import ResponsiveMenu from 'react-responsive-navbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -24,7 +25,8 @@ export default class NavBar extends React.Component {
                 smallMenuClassName="navbar-sm"
                 menu={
                     <div className="navbar-sm-expanded">
-                        <ul>
+                        <NavTitle title="Police Reform Tracker"/>
+                        <ul className="ul-navbar-sm">
                             <NavItem
                                 sectionId="map"
                                 sectionName="Map"

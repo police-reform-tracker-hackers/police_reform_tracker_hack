@@ -1,0 +1,16 @@
+.nav-title {
+    float: left;
+    padding-left: 1em;
+}
+@media only screen and (max-width: 600px) {
+    .nav-title {
+        float: none;
+        padding-left: 0;
+    }
+    .ul-navbar-sm {
+        padding-left: 0;
+    }
+    .navbar-sm {
+        padding-top: 1em;
+    }
+}
