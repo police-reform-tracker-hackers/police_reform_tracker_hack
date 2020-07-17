@@ -11,6 +11,7 @@ export default function NavItem(props) {
                 to={props.sectionId}
                 smooth={true}
                 duration={500}
+                offset={-40}
             >
                 <Button>
                     {props.sectionName}
