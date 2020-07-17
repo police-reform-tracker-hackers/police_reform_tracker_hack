@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ReactGA from 'react-ga';
 import NavBar from './components/NavBar.js';
 import Map from './components/Map';
 import DataTableMUI from './components/DataTableMUI.js';
