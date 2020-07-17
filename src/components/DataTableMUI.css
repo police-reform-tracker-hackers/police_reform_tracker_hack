@@ -1,3 +1,7 @@
 .MUIDataTable-responsiveScroll {
     min-height: 400px;
 }
+
+.centering {
+    text-align: center;
+}

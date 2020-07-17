@@ -1,5 +1,5 @@
 import MUIDataTable from 'mui-datatables';
-import {Link} from '@material-ui/core'
+import {Link, Typography} from '@material-ui/core'
 import React from 'react';
 
 
@@ -22,12 +22,17 @@ export default function DataTableMUI(props) {
   }
 
   return (
-    <MUIDataTable
-      title={"Raw data"}
-      data={data}
-      columns={columns}
-      options={options}
-    />
+    <div>
+      <Typography
+        variant="h3"
+        className="centering spaced"
+      >Raw data</Typography>
+      <MUIDataTable
+        data={data}
+        columns={columns}
+        options={options}
+      />
+    </div>
   )
 }
 
