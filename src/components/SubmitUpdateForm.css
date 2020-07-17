@@ -37,7 +37,6 @@ input[type="date"],
 select {
   display: block; 
   padding: 10px 20px;
-  text-transform: uppercase;
   letter-spacing: 1.25px;
 }
 
