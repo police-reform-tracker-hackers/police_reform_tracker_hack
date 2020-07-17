@@ -1,5 +1,7 @@
 import React from 'react';
 import './NavBar.css';
+import NavItem from './NavItem.js';
+import {Link, animateScroll as scroll} from 'react-scroll';
 import {AppBar, Toolbar, Button} from '@material-ui/core';
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -10,8 +12,9 @@ export default class NavBar extends React.Component {
     // }
     render() {
         return <AppBar
-        position="static"
-        style={{ background: 'transparent', boxShadow: 'none'}}
+        position="sticky"
+        className="navbar"
+        style={{ background: 'rgba(0, 0, 0, 0.2)', boxShadow: 'none'}}
         >
             <Toolbar>
                 {/*<IconButton
@@ -21,24 +24,30 @@ export default class NavBar extends React.Component {
                 >
                     <MenuIcon />
                 </IconButton>*/}
-                <Button href="#map">
-                    Map
-                </Button>
-                <Button href="#data">
-                    Data
-                </Button>
-                <Button href="#form">
-                    Submit an update
-                </Button>
-                <Button>
-                    Take action
-                </Button>
-                <Button href="#about">
-                    About us
-                </Button>
-                <Button href="contact">
-                    Contact
-                </Button>
+                <NavItem
+                    sectionId="map"
+                    sectionName="Map"
+                />
+                <NavItem
+                    sectionId="data"
+                    sectionName="Data"
+                />
+                <NavItem
+                    sectionId="form"
+                    sectionName="Submit an update"
+                />
+                <NavItem
+                    sectionId="takeaction"
+                    sectionName="Take action"
+                />
+                <NavItem
+                    sectionId="about"
+                    sectionName="About us"
+                />
+                <NavItem
+                    sectionId="contact"
+                    sectionName="Contact"
+                />
             </Toolbar>
         </AppBar>
     }
