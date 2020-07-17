@@ -10,7 +10,7 @@ const states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Color
   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 
   'West Virginia', 'Wisconsin', 'Wyoming'];
 
-const legStatuses = ['No Action Taken Yet', 'Commitment to Act / Pledge', 'Bill in Progress', 
+const legStatuses = ['No Action Taken', 'Commitment to Act', 'Bill in Progress', 
   'Bill Passed'];
 
 export default function SubmitUpdateForm() {
