@@ -41,8 +41,8 @@ export default class NavBar extends React.Component {
                     sectionName="Take action"
                 />
                 <NavItem
-                    sectionId="about"
-                    sectionName="About us"
+                    sectionId="mission"
+                    sectionName="Mission"
                 />
                 <NavItem
                     sectionId="contact"
