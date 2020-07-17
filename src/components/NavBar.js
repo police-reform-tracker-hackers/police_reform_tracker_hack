@@ -17,8 +17,8 @@ export default class NavBar extends React.Component {
         return (
             <div className="sticky">
             <ResponsiveMenu
-                menuOpenButton={<MenuIcon/>}
-                menuCloseButton={<CloseIcon/>}
+                menuOpenButton={<MenuIcon className="icon-lg" />}
+                menuCloseButton={<CloseIcon className="icon-lg" />}
                 changeMenuOn="600px"
                 largeMenuClassName="navbar-lg"
                 smallMenuClassName="navbar-sm"
