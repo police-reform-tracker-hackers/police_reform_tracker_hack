@@ -8,6 +8,7 @@ import SectionContainer from './sections/SectionContainer.js';
 import csvData from './police_reform_tracker_data_hack_1.csv';
 import * as d3 from 'd3';
 import SubmitUpdateForm from './components/SubmitUpdateForm';
+import {Typography} from '@material-ui/core';
 
 
 export default class App extends React.Component {
@@ -44,6 +45,18 @@ export default class App extends React.Component {
         <SectionContainer
           id="form"
           component={<SubmitUpdateForm/>}
+        />
+        <SectionContainer
+          id="takeaction"
+          component={<Typography variant="h4">Take Action</Typography>}
+        />
+        <SectionContainer
+          id="mission"
+          component={<Typography variant="h4">Mission</Typography>}
+        />
+        <SectionContainer
+          id="contact"
+          component={<Typography variant="h4">Contact us</Typography>}
         />
       </div>
     )
