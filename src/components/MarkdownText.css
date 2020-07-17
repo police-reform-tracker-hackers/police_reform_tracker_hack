@@ -5,3 +5,6 @@ div.content {
     margin-right: 2em;
     font-family: 'Roboto', sans-serif;
 }
+.section-title {
+    padding-top: 2em;
+}
