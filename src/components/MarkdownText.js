@@ -25,7 +25,7 @@ export default class MarkdownText extends React.Component {
             );
             if (this.props.title) {
                 return (
-                    <div>
+                    <div className="section-title">
                         <Typography variant="h3">{this.props.title}</Typography>
                         {contentBlock}
                     </div>

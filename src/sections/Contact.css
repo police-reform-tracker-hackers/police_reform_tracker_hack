@@ -1,0 +1,11 @@
+.mail-icon,
+.mail-link {
+    vertical-align: middle;
+    display: inline-block;
+}
+.mail-icon {
+    padding-right: 5px;
+}
+.section-title-contact {
+    padding-top: 0.5em;
+}

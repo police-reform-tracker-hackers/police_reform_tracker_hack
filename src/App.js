@@ -6,6 +6,7 @@ import Map from './components/Map';
 import DataTableMUI from './components/DataTableMUI.js';
 import MarkdownText from './components/MarkdownText.js';
 import SectionContainer from './sections/SectionContainer.js';
+import Contact from './sections/Contact.js';
 import csvData from './police_reform_tracker_data_hack_1.csv';
 import * as d3 from 'd3';
 import SubmitUpdateForm from './components/SubmitUpdateForm';
@@ -52,16 +53,17 @@ export default class App extends React.Component {
         <hr/>
         <SectionContainer
           id="takeaction"
+          backgroundColor="lightgray"
           component={<MarkdownText title={"Take Action Now"} file={takeaction}/>}
         />
-        <hr/>
         <SectionContainer
           id="mission"
           component={<MarkdownText title={"Mission"} file={mission}/>}
         />
         <SectionContainer
           id="contact"
-          component={<Typography variant="h4">Contact us</Typography>}
+          backgroundColor="lightGray"
+          component={<Contact/>}
         />
       </div>
     )
