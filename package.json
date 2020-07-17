@@ -14,7 +14,9 @@
     "react-dom": "^16.13.1",
     "react-google-charts": "^3.0.15",
     "react-is": "^16.13.1",
+    "react-router-hash-link": "^2.0.0",
     "react-scripts": "3.4.1",
+    "react-scroll": "^1.8.0",
     "react-virtualized": "^9.21.2"
   },
   "scripts": {
