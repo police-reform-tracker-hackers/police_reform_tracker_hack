@@ -4,11 +4,14 @@ import ReactGA from 'react-ga';
 import NavBar from './components/NavBar.js';
 import Map from './components/Map';
 import DataTableMUI from './components/DataTableMUI.js';
+import MarkdownText from './components/MarkdownText.js';
 import SectionContainer from './sections/SectionContainer.js';
 import csvData from './police_reform_tracker_data_hack_1.csv';
 import * as d3 from 'd3';
 import SubmitUpdateForm from './components/SubmitUpdateForm';
 import {Typography} from '@material-ui/core';
+import mission from './mission.md';
+import takeaction from './takeaction.md';
 
 
 export default class App extends React.Component {
@@ -46,13 +49,15 @@ export default class App extends React.Component {
           id="form"
           component={<SubmitUpdateForm/>}
         />
+        <hr/>
         <SectionContainer
           id="takeaction"
-          component={<Typography variant="h4">Take Action</Typography>}
+          component={<MarkdownText title={"Take Action Now"} file={takeaction}/>}
         />
+        <hr/>
         <SectionContainer
           id="mission"
-          component={<Typography variant="h4">Mission</Typography>}
+          component={<MarkdownText title={"Mission"} file={mission}/>}
         />
         <SectionContainer
           id="contact"
