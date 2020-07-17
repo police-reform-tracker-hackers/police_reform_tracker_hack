@@ -1,4 +1,6 @@
 import React from 'react';
+import './SubmitUpdateForm.css';
+import { Card, Typography, Button } from '@material-ui/core';
 
 const states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 
   'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 
@@ -13,8 +15,11 @@ const legStatuses = ['No Action Taken Yet', 'Commitment to Act / Pledge', 'Bill 
 
 export default function SubmitUpdateForm() {
     return (
-        <div className={"submit-update-form-container"}>
-            <form 
+        <Card className={"submit-update-form-container"}>
+          <Typography component="h6" variant="h6">
+            Submit a Legislative Update
+          </Typography>
+            <form className={"submit-update-form"}
               action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeHIWw6gyf5N9z5t-Inywv4Elce8cGsS-vbRtLKHy_yApH0sw/formResponse"
               >
               <p>State *</p>
@@ -24,6 +29,7 @@ export default function SubmitUpdateForm() {
                   states.map(state => <option key={state} value={state}>{state}</option>)
                 }
               </select>
+
               <p>Legislative Status *</p>
               <select name="entry.918943089">
                 <option selected disabled>Choose</option>
@@ -31,17 +37,24 @@ export default function SubmitUpdateForm() {
                   legStatuses.map(status => <option key={status} value={status}>{status}</option>)
                 }
               </select>
+
               <label for="link">Link to Your Source *</label>
               <input name="entry.1762728094" type="text" id="link"/>
+
               <label for="date">Date of Your Source *</label>
               <input name="entry.267144032" type="date"/>
+
               <label for="first-name">Your First Name *</label>
               <input name="entry.395727606" type="text" id="first-name"/>
+
               <label for="last-name">Your Last Name *</label>
               <input name="entry.1087655281" type="text" id="last-name"/>
+
               <label for="email">Best Email to Ask You a Follow-up Question, If Needed *</label>
               <input name="entry.1832616597" type="text" id="email"/>
+
+              <input type="submit" value="Submit"></input>
             </form>
-        </div>
+        </Card>
     );
 }
