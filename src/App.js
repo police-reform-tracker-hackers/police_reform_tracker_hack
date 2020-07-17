@@ -39,7 +39,6 @@ export default class App extends React.Component {
         <NavBar/>
         <SectionContainer
           id="map"
-          sectionTitle="Mapping police reform in the United States"
           component={this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
         />
         <hr/>
