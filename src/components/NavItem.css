@@ -1,6 +1,8 @@
 @media only screen and (max-width: 600px) {
     .navbar-item {
-        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
     }
 }
 .navbar-item {
