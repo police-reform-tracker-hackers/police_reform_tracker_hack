@@ -9,3 +9,6 @@ div.component {
     margin-left: auto;
     margin-right: auto;
 }
+.section-title {
+    padding: 1em;
+}

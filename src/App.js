@@ -39,11 +39,13 @@ export default class App extends React.Component {
         <NavBar/>
         <SectionContainer
           id="map"
+          sectionTitle="Mapping police reform in the United States"
           component={this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
         />
         <hr/>
         <SectionContainer
           id="data"
+          sectionTitle="See the data for yourself"
           component={this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
         />
         <SectionContainer
