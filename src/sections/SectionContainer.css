@@ -1,5 +1,7 @@
 div.section {
     padding: 2em;
+    padding-top: 0;
+    padding-bottom: 4em;
     text-align: center;
     align-content: center;
 }
