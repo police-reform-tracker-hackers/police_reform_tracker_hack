@@ -7,6 +7,7 @@ import DataTableMUI from './components/DataTableMUI.js';
 import SectionContainer from './sections/SectionContainer.js';
 import csvData from './police_reform_tracker_data_hack_1.csv';
 import * as d3 from 'd3';
+import SubmitUpdateForm from './components/SubmitUpdateForm';
 
 
 export default class App extends React.Component {
@@ -39,6 +40,10 @@ export default class App extends React.Component {
         <SectionContainer
           id="data"
           component={this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
+        />
+        <SectionContainer
+          id="form"
+          component={<SubmitUpdateForm/>}
         />
       </div>
     )
