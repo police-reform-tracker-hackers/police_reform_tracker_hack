@@ -1,0 +1,9 @@
+@media only screen and (max-width: 600px) {
+    .navbar-item {
+        display: block;
+    }
+}
+.navbar-item {
+    display: inline-block;
+    list-style-type: none;
+}
