@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
 import './index.css';
 import './common.css';
+import 'fontsource-roboto';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
