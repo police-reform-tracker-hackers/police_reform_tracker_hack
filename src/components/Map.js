@@ -46,7 +46,7 @@ export default function Map(props) {
                 options={options}
                 legendToggle
                 width="90vw"
-                height="90vh"
+                height="40vw"
                 chartEvents={[
                     {
                         eventName: "select",
