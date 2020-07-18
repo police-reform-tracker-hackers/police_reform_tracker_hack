@@ -11,8 +11,8 @@ import csvData from './police_reform_tracker_data_hack_1.csv';
 import * as d3 from 'd3';
 import SubmitUpdateForm from './components/SubmitUpdateForm';
 import {Typography} from '@material-ui/core';
-import mission from './mission.md';
-import takeaction from './takeaction.md';
+import mission from './text/mission.md';
+import takeaction from './text/takeaction.md';
 
 
 export default class App extends React.Component {
