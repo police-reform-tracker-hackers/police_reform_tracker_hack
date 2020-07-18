@@ -3,19 +3,19 @@ There are a number of valuable ways you can take action to further this cause. W
 
 1. Donate your time or money to established projects, such as:
 
-    * The Marshall Project
-    * Campaign Zero
-    * Wikipedia
+    * [The Marshall Project](https://www.themarshallproject.org/)
+    * [Campaign Zero](https://www.joincampaignzero.org/)
+    * [Wikipedia](https://en.wikipedia.org/wiki/List_of_police_reforms_related_to_the_George_Floyd_protests)
 
 1. Become a member of an existing organization or activist group. There are people doing great work around the country and some might even be closer than you think:
 
-    * Communities United Against Police Brutality
-    * Communities United for Police Reform
-    * Campaign Zero
-    * Lift Every Black voices hub
-    * Black Lives Matter
-    * Community Justice Exchange
-    * American Civil Liberties Union
+    * [Communities United Against Police Brutality](https://www.cuapb.org/)
+    * [Communities United for Police Reform](https://www.changethenypd.org/)
+    * [Campaign Zero](https://www.joincampaignzero.org/)
+    * Lift Every Black Voice Hub
+    * [Black Lives Matter](https://blacklivesmatter.com/)
+    * [Community Justice Exchange](https://www.communityjusticeexchange.org/)
+    * [American Civil Liberties Union](https://www.aclu.org/)
 
 1. Support causes that seek to reshape the narrative and provide new opportunities to traditionally underrepresented communities:
 
