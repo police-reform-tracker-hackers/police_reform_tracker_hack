@@ -23,8 +23,9 @@ export default function Map(props) {
 
     const legendInfo = [
         ["No Action Taken Yet", "rgb(239, 230, 220)"],
-        ["Commitment to Act", "rgb(128, 190, 122)"],
-        ["Bill Passed Or In Process", "rgb(16, 150, 24)"],
+        ["Commitment to Act", "rgb(165, 205, 155)"],
+        ["Bill in Progress", "rgb(90, 177, 89)"],
+        ["Bill Passed", "rgb(16, 150, 24)"],
     ];
 
     React.useEffect(() => {
