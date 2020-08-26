@@ -3,6 +3,11 @@
   width: 90vw;
 }
 
+.map-container path {
+  stroke-width: 0.5; 
+  stroke:#000;
+}
+
 .map-legend {
   text-align: left;
   position: absolute;
