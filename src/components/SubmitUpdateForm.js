@@ -26,7 +26,6 @@ export default function SubmitUpdateForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const cors = 'https://cors-anywhere.herokuapp.com/';
     const googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeHIWw6gyf5N9z5t-Inywv4Elce8cGsS-vbRtLKHy_yApH0sw/formResponse";
     const data = {}
     const urlData = []
