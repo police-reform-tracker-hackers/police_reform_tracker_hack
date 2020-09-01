@@ -25,3 +25,6 @@ yarn-error.log*
 # Mac stuff
 .DS_Store
 node_modules
+
+# Jetbrains
+.idea
