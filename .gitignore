@@ -29,5 +29,6 @@ node_modules
 # Jetbrains
 .idea
 
-# Access tokens
+# Access tokens and figma stuff
 FIGMA_API_TOKEN
+figma
