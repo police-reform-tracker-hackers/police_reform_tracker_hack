@@ -28,3 +28,6 @@ node_modules
 
 # Jetbrains
 .idea
+
+# Access tokens
+FIGMA_API_TOKEN
