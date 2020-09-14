@@ -7,7 +7,7 @@ import DataTableMUI from './components/DataTableMUI.js';
 import MarkdownText from './components/MarkdownText.js';
 import SectionContainer from './sections/SectionContainer.js';
 import Contact from './sections/Contact.js';
-import csvData from './police_reform_tracker_data.csv';
+import csvData from './police_reform_tracker_v4.csv';
 import * as d3 from 'd3';
 import SubmitUpdateForm from './components/SubmitUpdateForm';
 import {Typography} from '@material-ui/core';
