@@ -6,7 +6,7 @@ export default class SectionContainer extends React.Component {
     render() {
         let style = {};
         if (this.props.backgroundColor) {
-            style['background-color'] = this.props.backgroundColor;
+            style['backgroundColor'] = this.props.backgroundColor;
         }
         let contents;
         if (this.props.sectionTitle) {

@@ -2,12 +2,15 @@ import React from 'react';
 import { Chart } from 'react-google-charts';
 import './Map.css';
 
+const mapColors = ["rgb(239, 230, 220)", "rgb(165, 205, 155)", "rgb(90, 177, 89)", "rgb(16, 150, 24)", "goldenrod"];
+
 const options = {
     region: 'US',
     displayMode: 'regions',
     resolution: 'provinces',
     tooltip: {isHtml: true},
     legend: 'none',
+    colorAxis: {colors: mapColors}
 };
 
 const createTooltipContent = (status, link, date) => {
@@ -22,10 +25,11 @@ export default function Map(props) {
     const [csvInfo, setCSVInfo] = React.useState([]);
 
     const legendInfo = [
-        ["No Action Taken Yet", "rgb(239, 230, 220)"],
-        ["Commitment to Act", "rgb(165, 205, 155)"],
-        ["Bill in Progress", "rgb(90, 177, 89)"],
-        ["Bill Passed", "rgb(16, 150, 24)"],
+        ["No Action Taken Yet", mapColors[0]],
+        ["Commitment to Act", mapColors[1]],
+        ["Bill in Progress", mapColors[2]],
+        ["Bill Passed", mapColors[3]],
+        ["Enacted Into Law", mapColors[4]],
     ];
 
     React.useEffect(() => {
