@@ -35,7 +35,7 @@ const Head = () => {
 
             <meta property="og:title" content={meta.title} />
             <meta property="og:description" content={meta.description} />
-            <meta property="og:image" content="img/map.png" />
+            <meta property="og:image" content="https://user-images.githubusercontent.com/19695496/94343331-5a8cec00-ffe5-11ea-8695-ba790148d04e.png" />
         </Helmet>
     )
 }
