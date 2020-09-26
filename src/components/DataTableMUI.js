@@ -1,6 +1,7 @@
 import MUIDataTable from 'mui-datatables';
 import {Link, Typography} from '@material-ui/core'
 import React from 'react';
+import styles from './DataTableMUI.css'
 
 
 export default function DataTableMUI(props) {
@@ -27,6 +28,7 @@ export default function DataTableMUI(props) {
         data={data}
         columns={columns}
         options={options}
+        className="test-class"
       />
     </div>
   )
