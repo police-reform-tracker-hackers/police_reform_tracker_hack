@@ -13,6 +13,7 @@ import SubmitUpdateForm from './components/SubmitUpdateForm';
 import {Typography} from '@material-ui/core';
 import mission from './text/mission.md';
 import takeaction from './text/takeaction.md';
+import Head from './sections/Head';
 
 
 export default class App extends React.Component {
@@ -35,37 +36,40 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <NavBar/>
-        <SectionContainer
-          id="map"
-          component={this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
-        />
-        <hr/>
-        <SectionContainer
-          id="data"
-          sectionTitle="See the data for yourself"
-          component={this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
-        />
-        <SectionContainer
-          id="form"
-          component={<SubmitUpdateForm/>}
-        />
-        <hr/>
-        <SectionContainer
-          id="takeaction"
-          backgroundColor="lightgray"
-          component={<MarkdownText title={"Take Action Now"} file={takeaction}/>}
-        />
-        <SectionContainer
-          id="mission"
-          component={<MarkdownText title={"Mission"} file={mission}/>}
-        />
-        <SectionContainer
-          id="contact"
-          backgroundColor="lightGray"
-          component={<Contact/>}
-        />
+      <div>
+        <Head/>
+        <div className="App">
+          <NavBar/>
+          <SectionContainer
+            id="map"
+            component={this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
+          />
+          <hr/>
+          <SectionContainer
+            id="data"
+            sectionTitle="See the data for yourself"
+            component={this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
+          />
+          <SectionContainer
+            id="form"
+            component={<SubmitUpdateForm/>}
+          />
+          <hr/>
+          <SectionContainer
+            id="takeaction"
+            backgroundColor="lightgray"
+            component={<MarkdownText title={"Take Action Now"} file={takeaction}/>}
+          />
+          <SectionContainer
+            id="mission"
+            component={<MarkdownText title={"Mission"} file={mission}/>}
+          />
+          <SectionContainer
+            id="contact"
+            backgroundColor="lightGray"
+            component={<Contact/>}
+          />
+        </div>
       </div>
     )
   }
