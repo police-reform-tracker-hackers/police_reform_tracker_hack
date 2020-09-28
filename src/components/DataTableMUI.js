@@ -28,7 +28,6 @@ export default function DataTableMUI(props) {
         data={data}
         columns={columns}
         options={options}
-        className="test-class"
       />
     </div>
   )
