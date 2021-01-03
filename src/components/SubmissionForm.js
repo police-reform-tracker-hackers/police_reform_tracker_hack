@@ -28,12 +28,32 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: left;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  justify-content: space-between;
+  padding-bottom: 2em;
 `;
 
 const StyledTitle = styled.h2`
   font-size: 24px;
-  padding: 2em;
+  padding: 1em;
+`;
+
+const StyledLabel = styled.label`
+  margin: 5px;
+`;
+
+const StyledInput = styled.input`
+  margin-bottom: 5px;
+`;
+
+const StyledOption = styled.option`
+  margin-bottom: 5px;
+`;
+
+const StyledSelect = styled.select`
+  margin-bottom: 5px;
 `;
 
 
@@ -61,37 +81,37 @@ const SubmissionForm = () => {
         onSubmit={handleSubmit}
       >
         <p>State *</p>
-        <select name="state">
+        <StyledSelect name="state">
           <option selected disabled>Choose</option>
           {
             states.map(state => <option key={state} value={state}>{state}</option>)
           }
-        </select>
+        </StyledSelect>
 
         <p>Legislative Status *</p>
-        <select name="legStatus">
+        <StyledSelect name="legStatus">
           <option selected disabled>Choose</option>
           {
             legStatuses.map(status => <option key={status} value={status}>{status}</option>)
           }
-        </select>
+        </StyledSelect>
 
-        <label htmlFor="link">Link to Your Source *</label>
-        <input name="link" type="text" id="link" />
+        <StyledLabel htmlFor="link">Link to Your Source *</StyledLabel>
+        <StyledInput name="link" type="text" id="link" />
 
-        <label htmlFor="date">Date of Your Source *</label>
-        <input name="date" type="date" placeholder="YYYY-MM-DD" />
+        <StyledLabel htmlFor="date">Date of Your Source *</StyledLabel>
+        <StyledInput name="date" type="date" placeholder="YYYY-MM-DD" />
 
-        <label htmlFor="firstName">Your First Name *</label>
-        <input name="firstName" type="text" id="first-name" />
+        <StyledLabel htmlFor="firstName">Your First Name *</StyledLabel>
+        <StyledInput name="firstName" type="text" id="first-name" />
 
-        <label htmlFor="lastName">Your Last Name *</label>
-        <input name="lastName" type="text" id="last-name" />
+        <StyledLabel htmlFor="lastName">Your Last Name *</StyledLabel>
+        <StyledInput name="lastName" type="text" id="last-name" />
 
-        <label htmlFor="email">Best Email to Ask You a Follow-up Question, If Needed *</label>
-        <input name="email" type="text" id="email" />
+        <StyledLabel htmlFor="email">Best Email to Ask You a Follow-up Question, If Needed *</StyledLabel>
+        <StyledInput name="email" type="text" id="email" />
 
-        <input type="submit"></input>
+        <StyledInput type="submit"></StyledInput>
       </StyledForm>
     </div>
   )

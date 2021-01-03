@@ -2,6 +2,8 @@ import React from 'react';
 import { Chart } from 'react-google-charts';
 import './Map.css';
 import colors from '../assets/variables.js';
+import ReactDOMServer from 'react-dom/server';
+import styled from 'styled-components';
 
 const mapColors = [
   colors.darkGray,
@@ -21,11 +23,21 @@ const options = {
     backgroundColor: colors.black
 };
 
+const StyledSpan = styled.span`
+  color: ${colors.black};
+`;
+
 const createTooltipContent = (status, link, date) => {
-    return '<div>'
-        +'<p>' +status +'</p>'
-        +'<p>' +date +'</p>'
-    + '</div>';
+  const content = (
+    <div>
+      <p>
+        <StyledSpan>{status}</StyledSpan>
+        <br/>
+        <StyledSpan>{date}</StyledSpan>
+      </p>
+    </div>
+  );
+  return ReactDOMServer.renderToStaticMarkup(content);
 };
 
 export default function Map(props) {
