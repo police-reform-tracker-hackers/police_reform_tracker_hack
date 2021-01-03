@@ -7,6 +7,7 @@ import 'fontsource-roboto';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
 const trackingId = 'UA-172954440-1';
 ReactGA.initialize(trackingId);
 ReactGA.pageview('/');

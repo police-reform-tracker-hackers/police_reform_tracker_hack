@@ -3,7 +3,8 @@ import './App.css';
 import ReactGA from 'react-ga';
 import NavBar from './components/NavBar.js';
 import Map from './components/Map';
-import DataTableMUI from './components/DataTableMUI.js';
+// import DataTableMUI from './components/DataTableMUI.js';
+import MyDataTable from './components/MyDataTable.js';
 import MarkdownText from './components/MarkdownText.js';
 import SectionContainer from './sections/SectionContainer.js';
 import Contact from './sections/Contact.js';
@@ -14,6 +15,7 @@ import {Typography} from '@material-ui/core';
 import mission from './text/mission.md';
 import takeaction from './text/takeaction.md';
 import Head from './sections/Head';
+import GlobalStyle from './assets/globalStyles.js';
 
 
 export default class App extends React.Component {
@@ -38,23 +40,22 @@ export default class App extends React.Component {
     return (
       <div>
         <Head/>
+        <GlobalStyle/>
         <div className="App">
           <NavBar/>
           <SectionContainer
             id="map"
             component={this.state.data ? <Map data={this.state.data}/> : <div>Loading map...</div>}
           />
-          <hr/>
           <SectionContainer
             id="data"
-            sectionTitle="See the data for yourself"
-            component={this.state.data ? <DataTableMUI data={this.state.data}/> : <div>Loading table...</div>}
+
+            component={this.state.data ? <MyDataTable data={this.state.data}/> : <div>Loading table...</div>}
           />
           <SectionContainer
             id="form"
             component={<SubmitUpdateForm/>}
           />
-          <hr/>
           <SectionContainer
             id="takeaction"
             backgroundColor="lightgray"

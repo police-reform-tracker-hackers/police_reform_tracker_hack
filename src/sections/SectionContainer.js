@@ -1,7 +1,45 @@
 import React from 'react';
 import './SectionContainer.css';
 import {Typography} from '@material-ui/core';
+import styled from 'styled-components';
+import Card from '../components/Card.js';
 
+
+const StyledSectionContainer = styled.div`
+  padding: 2em;
+  padding-top: 0;
+  padding-bottom: 4em;
+  text-align: center;
+  align-content: center;
+`
+
+const SectionContainer = ({ sectionTitle, component, id }) => {
+  let contents;
+  if (sectionTitle) {
+    contents = (
+      <div>
+        <Typography variant="h3" className="section-title">
+          {sectionTitle}
+        </Typography>
+        {component}
+      </div>
+    );
+  } else {
+    contents = component;
+  }
+  
+  return (
+    <section id={id}>
+      <Card className={component}>
+        {contents}
+      </Card>
+    </section>
+  )
+};
+
+export default SectionContainer;
+
+/*
 export default class SectionContainer extends React.Component {
     render() {
         let style = {};
@@ -33,3 +71,4 @@ export default class SectionContainer extends React.Component {
         )
     }
 }
+*/

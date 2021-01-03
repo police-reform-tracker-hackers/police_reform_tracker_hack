@@ -1,8 +1,15 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 import './Map.css';
+import colors from '../assets/variables.js';
 
-const mapColors = ["rgb(239, 230, 220)", "rgb(165, 205, 155)", "rgb(90, 177, 89)", "rgb(16, 150, 24)", "goldenrod"];
+const mapColors = [
+  colors.darkGray,
+  colors.purple300,
+  colors.purple200,
+  colors.purple100,
+  colors.gold
+];
 
 const options = {
     region: 'US',
@@ -10,7 +17,8 @@ const options = {
     resolution: 'provinces',
     tooltip: {isHtml: true},
     legend: 'none',
-    colorAxis: {colors: mapColors}
+    colorAxis: {colors: mapColors},
+    backgroundColor: colors.black
 };
 
 const createTooltipContent = (status, link, date) => {
