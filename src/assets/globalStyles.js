@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, p, span, text, a,
-  div, li {
+  div, li, label {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
