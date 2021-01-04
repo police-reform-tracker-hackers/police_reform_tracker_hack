@@ -50,6 +50,16 @@ const LegislationStatusRow = styled.div`
   padding: 22px 25px;
 `
 
+const LinkContainer = styled.div`
+  border-radius: 30px;
+  background-color: ${colors.darkGray};
+  padding: 0.5em;
+`
+
+const StyledLink = styled.a`
+  color: ${colors.lightBlue};
+`;
+
 const MyDataTable = ({ data }) => {
   const displayData = data.map(d => {
     let res = {
@@ -77,9 +87,16 @@ const MyDataTable = ({ data }) => {
           </LegislationStatusRow>
         )
       }
-    }
-    if (d === "color") {
+    } else if (d === "color") {
       res.omit = true;
+    } else if (d === "source_link") {
+      res.cell = row => {
+        return (
+          <LinkContainer>
+            {d.source_link === "None Found" ? <p>N/A</p> : <StyledLink href={row.source_link}>Link</StyledLink>}
+          </LinkContainer>
+        )
+      }
     }
     return res;
   });

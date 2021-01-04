@@ -8,6 +8,7 @@ const colors = {
   purple200: '#1C00CC',
   purple100: '#4F32FF',
   darkBlue: '#254585',
+  lightBlue: '#3076FF',
   gold: '#DAA520'
 };
 
