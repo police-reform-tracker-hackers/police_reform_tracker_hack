@@ -50,7 +50,6 @@ export default class App extends React.Component {
           />
           <SectionContainer
             id="data"
-
             component={this.state.data ? <MyDataTable data={this.state.data}/> : <div>Loading table...</div>}
           />
           <SectionContainer

@@ -19,6 +19,15 @@ createTheme('customTheme', {
   },
   text: {
     secondary: colors.white
+  },
+  selected: {
+    default: colors.lightGray
+  },
+  highlightOnHover: {
+    default: colors.lightGray
+  },
+  context: {
+    background: colors.black
   }
 });
 
@@ -32,7 +41,8 @@ const statusColors = [
 
 const StyledTitle = styled.h2`
   font-size: 24px;
-  padding-top: 2em;
+  padding-top: 1em;
+  margin-top: 0;
 `
 
 const Dot = styled.span`
@@ -112,6 +122,9 @@ const MyDataTable = ({ data }) => {
         theme="customTheme"
         selectableRows
         pagination
+        responsive
+        highlightOnHover
+        selectableRowsHighlight
       />
     </div>
   )
